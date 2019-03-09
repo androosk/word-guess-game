@@ -20,7 +20,6 @@ var lostTries= 0;
 var triesRemaining = 10;
 var wordList = ["totally", "grody", "tubular", "chill", "bitchin", "righteous", "gnarly", "dude", "awesome", "radical"];
 var imageList = ["allisonbreakfastclubrs.jpg", "backtofuturers.jpg", "bensteinrs.png", "bfstclbrs.jpg", "fbdors.JPG", "ghostbustersrs.jpg", "gooniesrs.jpg", "pretty_in_pink_duckyrs.jpg", "spicolirs.png", "valley-girlrs.jpg"];
-var soundList = ["gnarly.wav", "tappin.wav", "totally.wav"];
 var audioYes = new Audio("assets/sounds/totally.wav");
 var audioNo = new Audio("assets/sounds/gnarly.wav");
 var audioBkd = new Audio("assets/sounds/oxygene.mp3");
@@ -45,7 +44,14 @@ document.onkeyup = function() {
     document.getElementById("gameImage").src = theImage;
 
   document.onkeyup = function(event) {
-    if (playing == true && 96 > event.key.charCodeAt(0) || event.key.charCodeAt(0) > 123) {
+    if (playing === false) {
+      stopAudioBkd();
+      document.getElementById("word-string").innerHTML = "GAME OVER";
+      document.getElementById("wrong-letter").innerHTML = "THANK YOU FOR PLAYING";
+      document.location.reload();
+      // clearInterval();
+    }
+    else if (playing == true && 96 > event.key.charCodeAt(0) || event.key.charCodeAt(0) > 123) {
       alert("Please select a letter!");
     }
     else if (96 < event.key.charCodeAt(0) && event.key.charCodeAt(0) < 123) {
@@ -60,12 +66,17 @@ document.onkeyup = function() {
              wrongLetter.push(yourChoice);
             }
             else if (triesRemaining <= 0) {
-              resetVars();
-              resetWord();
-              resetImg();
-              playAudio2();
-              lostTries++
-              document.getElementById("gameImage").src = theImage;
+              lostTries++;
+              if ((wonTries + lostTries) >= 10) {
+                playing = false;
+              }
+              else {
+                resetVars();
+                resetWord();
+                resetImg();
+                playAudio2();
+                document.getElementById("gameImage").src = theImage;
+              }
             }
           }
           else if (currentWord.includes(yourChoice) === true) {
@@ -74,11 +85,16 @@ document.onkeyup = function() {
               wordString[i] = yourChoice;
                 if (wordString.indexOf("_") === -1) {
                   wonTries++;
-                  resetVars();
-                  resetWord();
-                  resetImg();
-                  playAudio1();
-                  document.getElementById("gameImage").src = theImage;
+                  if ((wonTries + lostTries) >= 10) {
+                    playing = false;
+                  }
+                  else {
+                    resetVars();
+                    resetWord();
+                    resetImg();
+                    playAudio1();
+                    document.getElementById("gameImage").src = theImage;
+                  }
                 }
               }
             }
@@ -95,6 +111,7 @@ document.onkeyup = function() {
           document.getElementById("missed-attempts").innerHTML = "Missed Attempts: " + lostTries;
         }
     }
+
   }
 }
 
@@ -129,4 +146,8 @@ function playAudio2() {
 }
 function playAudioBkd() {
   audioBkd.play();
+}
+function stopAudioBkd() {
+  audioBkd.pause();
+  audioBkd.currentTime = 0;
 }
