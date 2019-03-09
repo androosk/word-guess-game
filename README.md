@@ -9,18 +9,18 @@ Sound clips from the movie Fast Times at Ridgemont High play on events where the
 
 ### Following is the psuedocode I wrote for determining gameply
 
-####Word Guess Game Play
+### Word Guess Game Play
 
-variables and type list
-wordList[] - list of 10 words to be chosen from
-imageList[] - list of ten pictures in the assets folder for display
-currentWord - word randomly chosen from wordList array
-yourChoice - represents key player chose
-gameWord[] - visual representation of word in play			DISPLAY ITEM
-wrongChoice[] - list of incorrect letters chosen during round		DISPLAY ITEM
-triesRemaining - number of key attempts left before end of round	DISPLAY ITEM
-wonTries - numeric representation of successful attempts		DISPLAY ITEM
-lostTries - numeric representation of unsuccessful attempts		DISPLAY ITEM
+* variables and type list
+* wordList[] - list of 10 words to be chosen from
+* imageList[] - list of ten pictures in the assets folder for display
+* currentWord - word randomly chosen from wordList array
+* yourChoice - represents key player chose
+* gameWord[] - visual representation of word in play			DISPLAY ITEM
+* wrongChoice[] - list of incorrect letters chosen during round		DISPLAY ITEM
+* triesRemaining - number of key attempts left before end of round	DISPLAY ITEM
+* wonTries - numeric representation of successful attempts		DISPLAY ITEM
+* lostTries - numeric representation of unsuccessful attempts		DISPLAY ITEM
 
 intro - press any key to continue
 listening event, no var required
