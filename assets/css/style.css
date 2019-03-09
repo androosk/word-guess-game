@@ -1,0 +1,73 @@
+body {
+  background-color: black;
+}
+
+.gameContainer {
+  width: 90%;
+  margin-left: 80px;
+  margin: auto;
+  border-width: 6px;
+  border-color: whitesmoke;
+  border-style: dashed double none double;
+}
+.textContainer {
+  width: 80%;
+  padding-top: 40px;
+  margin: auto;
+}
+.imgContainer {
+  display: block;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.imageContainer {
+  border: 4px solid white;
+  margin-bottom: 40px;
+}
+.playContainer {
+  border: 2px solid white;
+  margin-bottom: 40px;
+}
+p, h1, h2, h3 {
+  font-family: 'Press Start 2P', cursive;
+}
+
+p {
+  font-size: .75rem;
+  color: white;
+  line-height: 1.5rem;
+}
+.marquis {
+  text-align: center;
+}
+h1 {
+  color: green;
+  font-size: .9rem;
+  margin-top: 20px;
+  text-align: center;
+}
+h2 {
+  color: #ffff00;
+  font-size: .75rem;
+  padding-top: 10px;
+  text-align: center;
+}
+h3 {
+  color: white;
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
+  padding-top: 10px;
+  text-align: center;
+}
+.footer {
+  position: sticky;
+  bottom: 0 center;
+  width: 100%;
+  height: 30px;
+  background-color: blue;
+}
+#instructionBlock {
+  margin-top: 40px;
+  border: 2px solid white;
+}

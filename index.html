@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Word Game</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div class="gameContainer">
+    <h1>Welcome back, USER. You logged in at <span id="date"></span></h1>
+
+    <div class="textContainer">
+
+
+      <img class="imgContainer" src="assets/images/wordguesstxtrs.png" alt="word guess logo">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-2"></div>
+          <section class="col-lg-8" id="instructionBlock">
+            <header>
+              <h1>Guess the 1980s Slang Word</h1>
+            </header>
+              <p class="marquis" id="marquis"></p>
+
+          </section>
+        </div>
+        <div class="row">
+          <div class="col-lg-2"></div>
+          <div class="col-lg-4 imageContainer">
+            <img class="img-fluid" id="gameImage">
+          </div>
+          <div class="col-lg-4 playContainer">
+            <h3>Current Game</h3>
+            <p class="marquis">Correct Guesses</p>
+            <p class="marquis" id="word-string">_ _ _ _ _ _ _</p>
+            <p class="marquis">Incorrect Guesses</p>
+            <p class="marquis" id="wrong-letter">_ _ _ _ _ _ _</p>
+            <p id="guesses-left">Guesses Left: 10</p>
+            <p id="current-score">Current Score: 0</p>
+            <p id="missed-attempts">Missed Attempts: 0</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+        <h2>WORD GUESS GAME BBS | Serial | Connection Rate: 300 baud | Copyright&copy; 2019</h2>
+    </footer>
+  </div>
+<!--If using javascript-->
+<script src="assets/javascript/game.js"></script>
+</body>
+</html>
