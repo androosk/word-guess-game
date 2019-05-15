@@ -63,3 +63,5 @@ Game play
     wrongChoice
     triesRemaining
     wonTries
+## Game can be played at:
+ https://androosk.github.io/word-guess-game/
